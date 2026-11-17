@@ -1,0 +1,134 @@
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background: #f4f7fb;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+}
+
+.schoolIcon {
+  font-size: 55px;
+  margin-bottom: 12px;
+}
+
+.container h1 {
+  color: #172554;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 15px;
+  margin: 12px 0 40px;
+}
+
+.portalContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.portalCard {
+  width: 100%;
+  padding: 35px 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.portalCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+.portalCard:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+.adminIcon,
+.studentIcon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 35px;
+}
+
+.adminIcon {
+  background: #eaf0ff;
+}
+
+.studentIcon {
+  background: #e6f8f0;
+}
+
+.portalCard h2 {
+  color: #172554;
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+
+.portalCard p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 48px;
+  margin: 0 0 22px;
+}
+
+.portalLink {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: 45px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+  .portalContainer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .container h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    margin-bottom: 28px;
+  }
+
+  .portalCard {
+    padding: 28px 20px;
+  }
+
+  .footer {
+    margin-top: 30px;
+  }
+}

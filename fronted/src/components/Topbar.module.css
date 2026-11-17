@@ -1,0 +1,558 @@
+
+/* =========================================
+   TOPBAR - MODERN TYPOGRAPHY
+========================================= */
+
+.topbar {
+  min-height: 96px;
+  width: 100%;
+  padding: 0 34px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf4;
+
+  position: relative;
+  z-index: 10;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================================
+   PAGE INFORMATION
+========================================= */
+
+.pageInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.pageEyebrow {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #ce4b05;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 750;
+
+  letter-spacing: 1.7px;
+  line-height: 1.5;
+}
+
+.pageInfo h1 {
+  margin: 0;
+
+  color: #4f6df5;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+
+  letter-spacing: -1.1px;
+  line-height: 1.25;
+}
+
+.pageInfo p {
+  margin: 6px 0 0;
+
+  color: #7c899e;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  letter-spacing: 0.05px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   ADMIN PROFILE
+========================================= */
+
+.adminInfo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.adminProfileButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.adminProfileButton:hover,
+.adminProfileButton[aria-expanded="true"] {
+  background: #f7f9ff;
+  border-color: #e5eafe;
+  box-shadow: 0 3px 10px rgba(42, 78, 160, 0.04);
+}
+
+.adminProfileButton:focus-visible {
+  outline: 2px solid #4f6df5;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   ADMIN AVATAR
+========================================= */
+
+.adminAvatar {
+  width: 47px;
+  height: 47px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  border: 3px solid #edf1ff;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #e8efff, #dce6ff);
+
+  color: #355fe5;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+
+  box-shadow: 0 3px 9px rgba(53, 95, 229, 0.08);
+}
+
+.adminAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   ADMIN TEXT
+========================================= */
+
+.adminText {
+  min-width: 0;
+  max-width: 190px;
+}
+
+.adminText h3 {
+  margin: 0;
+
+  color: #202b40;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: -0.25px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adminText p {
+  margin: 4px 0 0;
+
+  color: #8794a8;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================
+   DROPDOWN ARROW
+========================================= */
+
+.dropdownArrow {
+  margin-left: 4px;
+  color: #8b98ac;
+  transition: transform 0.2s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   PROFILE DROPDOWN
+========================================= */
+
+.profileDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 285px;
+  max-width: calc(100vw - 24px);
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.12),
+    0 3px 10px rgba(15, 23, 42, 0.04);
+
+  z-index: 1000;
+
+  animation: dropdownAppear 0.2s ease;
+}
+
+@keyframes dropdownAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   DROPDOWN USER HEADER
+========================================= */
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 11px 16px;
+
+  border-bottom: 1px solid #edf0f6;
+}
+
+.dropdownAvatar {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #e8efff, #e8e5ff);
+  color: #4f46e5;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.dropdownAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dropdownUser {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dropdownUser strong {
+  color: #202b40;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+
+  overflow-wrap: anywhere;
+}
+
+.dropdownUser span {
+  color: #8794a8;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   DROPDOWN LABEL
+========================================= */
+
+.dropdownLabel {
+  padding: 16px 11px 8px;
+
+  color: #9aa6b8;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+/* =========================================
+   DROPDOWN BUTTONS
+========================================= */
+
+.profileDropdown > button {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 11px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #45536b;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.profileDropdown > button:hover {
+  background: #f1f5ff;
+  color: #365fe3;
+}
+
+.profileDropdown > button:focus-visible {
+  outline: 2px solid #4f6df5;
+  outline-offset: -2px;
+}
+
+/* =========================================
+   DROPDOWN ICON
+========================================= */
+
+.dropdownIcon {
+  width: 29px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: #f0f3fa;
+  color: #657794;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.profileDropdown > button:hover .dropdownIcon {
+  background: #e3ebff;
+  color: #365fe3;
+}
+
+/* =========================================
+   DROPDOWN DIVIDER
+========================================= */
+
+.dropdownDivider {
+  height: 1px;
+  margin: 8px 3px;
+  background: #edf0f5;
+}
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.profileDropdown > .dropdownLogout {
+  color: #dc4545;
+}
+
+.profileDropdown > .dropdownLogout .dropdownIcon {
+  background: #fff0f0;
+  color: #dc4545;
+}
+
+.profileDropdown > .dropdownLogout:hover {
+  background: #fff1f1;
+  color: #bd2828;
+}
+
+.profileDropdown > .dropdownLogout:hover .dropdownIcon {
+  background: #ffe1e1;
+  color: #bd2828;
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menuButton {
+  display: none;
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .topbar {
+    min-height: 72px;
+    padding: 0 17px;
+    gap: 13px;
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border: 1px solid #e7ebf3;
+    border-radius: 11px;
+
+    background: #ffffff;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+  }
+
+  .menuButton span {
+    width: 17px;
+    height: 2px;
+
+    border-radius: 5px;
+    background: #334155;
+  }
+
+  .menuButton:hover {
+    background: #f1f5ff;
+  }
+
+  .pageEyebrow,
+  .pageInfo p {
+    display: none;
+  }
+
+  .pageInfo h1 {
+    font-size: 20px;
+    letter-spacing: -0.7px;
+  }
+
+  .adminProfileButton {
+    padding: 5px;
+    gap: 0;
+  }
+
+  .adminAvatar {
+    width: 39px;
+    height: 39px;
+  }
+
+  .adminText,
+  .dropdownArrow {
+    display: none;
+  }
+
+  .profileDropdown {
+    top: calc(100% + 10px);
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .topbar {
+    padding: 0 11px;
+    gap: 9px;
+  }
+
+  .menuButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .adminAvatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .pageInfo h1 {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .profileDropdown {
+    animation: none;
+  }
+
+  .adminProfileButton,
+  .dropdownArrow,
+  .profileDropdown > button,
+  .dropdownIcon {
+    transition: none;
+  }
+}

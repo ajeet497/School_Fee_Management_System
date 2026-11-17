@@ -1,0 +1,18 @@
+# Query: 192.168.24.46:5000
+
+5 results - 5 files
+
+fronted\src\pages\FeePayment.js:
+  3: const API_BASE_URL = "http://10.158.5.47:5000/api";
+
+fronted\src\pages\FeeReceipts.js:
+  11:   "http://10.158.5.47:5000/api";
+
+fronted\src\pages\FeeStructure.js:
+  4: const API_BASE_URL = "http://10.158.5.47:5000/api";
+
+fronted\src\pages\Students.logic.js:
+  10: const API_BASE_URL = "http://10.158.5.47:5000/api";
+
+fronted\src\services\studentApi.js:
+  2: const API_BASE_URL = "http://10.158.5.47:5000/api";

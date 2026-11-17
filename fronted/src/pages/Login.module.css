@@ -1,0 +1,321 @@
+/* Full page */
+.loginPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f3f6fb;
+}
+
+/* Login card */
+.loginCard {
+  width: 100%;
+  max-width: 430px;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+}
+
+/* Header */
+.loginHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  background: #eff6ff;
+  font-size: 32px;
+}
+
+.loginHeader h1 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.loginHeader p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Form groups */
+.formGroup {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 9px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Email input */
+.formGroup > input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  outline: none;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.formGroup > input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.formGroup input::placeholder {
+  color: #9ca3af;
+}
+
+/* Password input wrapper */
+.passwordWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.passwordWrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.passwordWrapper input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Blue Show/Hide button */
+.togglePassword {
+  flex-shrink: 0;
+  margin-right: 8px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.togglePassword:hover {
+  background: #1d4ed8;
+}
+
+/* Validation errors */
+.error {
+  display: block;
+  margin-top: 7px;
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Form message */
+.message {
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Login button */
+.loginButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.loginButton:hover {
+  background: #1d4ed8;
+}
+
+.loginButton:active {
+  transform: scale(0.99);
+}
+
+/* Footer */
+.loginFooter {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.loginFooter p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* Keyboard accessibility */
+.loginButton:focus-visible,
+.togglePassword:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 3px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 480px) {
+  .loginPage {
+    padding: 16px;
+  }
+
+  .loginCard {
+    padding: 26px 20px;
+  }
+
+  .loginHeader h1 {
+    font-size: 24px;
+  }
+}
+
+/* Forgot password link */
+
+.forgotPasswordRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+  margin-bottom: 22px;
+}
+
+.forgotPasswordLink {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgotPasswordLink:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Authentication secondary pages */
+
+.authBackLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.authBackLink:hover {
+  text-decoration: underline;
+}
+
+.authDescription {
+  margin: 0 0 24px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.authSubmitButton {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.authSubmitButton:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.authSubmitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.authSubmitButton:focus-visible,
+.forgotPasswordLink:focus-visible,
+.authBackLink:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 3px;
+}
+
+.authSuccess {
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid #bbf7d0;
+  border-radius: 7px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}

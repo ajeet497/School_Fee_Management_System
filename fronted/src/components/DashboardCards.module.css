@@ -1,0 +1,406 @@
+
+/* =========================================
+   DASHBOARD OVERVIEW
+========================================= */
+
+.dashboardSection {
+  width: 100%;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 8px 0 24px;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.sectionHeading p {
+  margin: 6px 0 0;
+  color: #8290a5;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sessionBadge {
+  flex-shrink: 0;
+  padding: 10px 15px;
+  border: 1px solid #dbe7ff;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f0f5ff, #eaf1ff);
+  color: #315fe8;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(49, 95, 232, 0.05);
+}
+
+/* =========================================
+   DASHBOARD CARDS GRID
+========================================= */
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+
+/* =========================================
+   INDIVIDUAL CARD
+========================================= */
+
+.card {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  padding: 25px;
+
+  background: linear-gradient(145deg, #ffffff 0%, #fcfdff 100%);
+  border: 1px solid #e9edf5;
+  border-radius: 17px;
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.025),
+    0 1px 2px rgba(15, 23, 42, 0.02);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Decorative background circle */
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  right: -48px;
+  bottom: -65px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #dce5f3;
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.07),
+    0 4px 10px rgba(15, 23, 42, 0.025);
+}
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardIcon {
+  width: 51px;
+  height: 51px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 15px;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.07) rotate(-3deg);
+}
+
+.cardDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.cardContent {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #738198;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.1px;
+}
+
+.cardValue {
+  margin: 9px 0 5px;
+  color: #172033;
+  font-size: clamp(23px, 2vw, 30px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.cardDescription {
+  display: block;
+  color: #9aa5b5;
+  font-size: 12px;
+  font-weight: 450;
+}
+
+/* =========================================
+   CARD COLOR THEMES
+========================================= */
+
+/* BLUE - STUDENTS */
+
+.blue {
+  color: #3b82f6;
+}
+
+.blue .cardIcon {
+  background: linear-gradient(135deg, #eff6ff, #e5efff);
+  color: #3678ed;
+}
+
+.blue .cardDot {
+  color: #3b82f6;
+}
+
+/* PURPLE - CLASSES */
+
+.purple {
+  color: #8b5cf6;
+}
+
+.purple .cardIcon {
+  background: linear-gradient(135deg, #f4efff, #eee7ff);
+  color: #8955ef;
+}
+
+.purple .cardDot {
+  color: #8b5cf6;
+}
+
+/* GREEN - COLLECTION */
+
+.green {
+  color: #16a34a;
+}
+
+.green .cardIcon {
+  background: linear-gradient(135deg, #eafaf1, #ddf5e7);
+  color: #16a34a;
+}
+
+.green .cardDot {
+  color: #16a34a;
+}
+
+/* ORANGE - PENDING FEE */
+
+.orange {
+  color: #ea8a20;
+}
+
+.orange .cardIcon {
+  background: linear-gradient(135deg, #fff5e9, #ffecd5);
+  color: #e88a20;
+}
+
+.orange .cardDot {
+  color: #ea8a20;
+}
+
+/* TEAL - PAID STUDENTS */
+
+.teal {
+  color: #0d9488;
+}
+
+.teal .cardIcon {
+  background: linear-gradient(135deg, #e7f9f6, #d9f3ee);
+  color: #0d9488;
+}
+
+.teal .cardDot {
+  color: #0d9488;
+}
+
+/* RED - UNPAID STUDENTS */
+
+.red {
+  color: #e05252;
+}
+
+.red .cardIcon {
+  background: linear-gradient(135deg, #fff0f0, #ffe5e5);
+  color: #e05252;
+}
+
+.red .cardDot {
+  color: #e05252;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.errorMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin: 0 0 18px;
+  padding: 14px 16px;
+
+  border: 1px solid #fecaca;
+  border-radius: 11px;
+
+  background: #fff5f5;
+  color: #b91c1c;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.errorMessage svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .cardsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 17px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 20px;
+  }
+
+  .sectionHeading p {
+    font-size: 12px;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .card {
+    gap: 16px;
+    padding: 15px;
+    border-radius: 13px;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .cardIcon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .cardValue {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+  }
+
+  .cardTitle {
+    font-size: 11px;
+  }
+
+  .cardDescription {
+    font-size: 10px;
+  }
+
+  .sessionBadge {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 17px;
+  }
+
+  .cardValue {
+    font-size: 23px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardIcon {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

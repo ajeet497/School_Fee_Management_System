@@ -1,0 +1,29 @@
+# Query: 192.168.24.46
+# ContextLines: 1
+
+5 results - 5 files
+
+fronted\src\pages\FeePayment.js:
+  2  
+  3: const API_BASE_URL = "http://localhost:5173/api";
+  4  const DEFAULT_SESSION = "2026-2027";
+
+fronted\src\pages\FeeReceipts.js:
+  10    import.meta.env.VITE_API_URL ||
+  11:   "http://localhost:5173/api";
+  12  
+
+fronted\src\pages\FeeStructure.js:
+  3  
+  4: const API_BASE_URL = "http://localhost:5173/api";
+  5  const PROFILE_STORAGE_KEY = "schoolManagementProfile";
+
+fronted\src\pages\Students.logic.js:
+   9  
+  10: const API_BASE_URL = "http://localhost:5173/api";
+  11  
+
+fronted\src\services\studentApi.js:
+  1  
+  2: const API_BASE_URL = "http://localhost:5173/api";
+  3  

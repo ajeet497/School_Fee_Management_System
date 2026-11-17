@@ -1,0 +1,131 @@
+/* ========================================
+   MONTHLY COLLECTION
+======================================== */
+
+.container {
+  background-color: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  margin-top: 24px;
+
+  padding: 20px;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+/* ========================================
+   TABLE CONTAINER
+======================================== */
+
+.tableContainer {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.table {
+  width: 100%;
+
+  min-width: 450px;
+
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+
+  padding: 12px;
+
+  background-color: #f8fafc;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 12px;
+
+  border-top: 1px solid #e2e8f0;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+.table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .container {
+    margin-top: 16px;
+
+    padding: 16px;
+
+    border-radius: 8px;
+  }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .header h2 {
+    font-size: 16px;
+  }
+
+  .table {
+    min-width: 450px;
+  }
+
+  .table th {
+    padding: 10px;
+
+    font-size: 12px;
+  }
+
+  .table td {
+    padding: 12px 10px;
+
+    font-size: 13px;
+  }
+
+}

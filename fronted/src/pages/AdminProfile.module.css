@@ -1,0 +1,500 @@
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+  box-sizing: border-box;
+  color: #172033;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+}
+
+.pageHeader h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.pageHeader p {
+  margin: 7px 0 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.backButton {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.backButton:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profileCard {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e8edf4;
+  border-radius: 15px;
+  box-shadow: 0 5px 24px rgba(15, 23, 42, 0.045);
+  box-sizing: border-box;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.photoSection,
+.formSection {
+  padding: 0;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.sectionIcon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sectionHeading p {
+  margin: 5px 0 0;
+  color: #8290a3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.sectionDivider {
+  height: 1px;
+  margin: 28px 0;
+  background: #edf0f5;
+}
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
+.photoContent {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding-left: 55px;
+}
+
+.avatar {
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #eff6ff;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.photoButtons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.uploadButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.uploadButton:hover {
+  background: #1d4ed8;
+}
+
+.removeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  background: #fff7f7;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #fee2e2;
+}
+
+.photoActions small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 23px 25px;
+  padding-left: 55px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.formGroup label {
+  margin-bottom: 9px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.formGroup label span {
+  color: #ef4444;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #dfe5ed;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #94a3b8;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.inputWrapper:has(input[aria-invalid="true"]) {
+  border-color: #ef4444;
+}
+
+.inputWrapper input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.inputWrapper input::placeholder {
+  color: #a0acbc;
+}
+
+/* =========================
+   VALIDATION
+========================= */
+
+.error {
+  margin-top: 7px;
+  color: #dc2626;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================
+   STATUS MESSAGES
+========================= */
+
+.message {
+  margin-top: 25px;
+  padding: 13px 15px;
+  border: 1px solid #bfdbfe;
+  border-radius: 9px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.successMessage {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.errorMessage {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0f5;
+}
+
+.cancelButton,
+.saveButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 10px 19px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cancelButton {
+  border: 1px solid #dfe5ed;
+  background: #ffffff;
+  color: #475569;
+}
+
+.cancelButton:hover {
+  background: #f8fafc;
+}
+
+.saveButton {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.saveButton:hover {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.backButton:focus-visible,
+.uploadButton:focus-visible,
+.removeButton:focus-visible,
+.cancelButton:focus-visible,
+.saveButton:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 3px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .profileCard {
+    padding: 24px;
+  }
+
+  .pageHeader h1 {
+    font-size: 25px;
+  }
+
+  .photoContent,
+  .formGrid {
+    padding-left: 0;
+  }
+
+  .formGrid {
+    gap: 20px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 520px) {
+  .page {
+    padding: 14px;
+  }
+
+  .pageHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pageHeader h1 {
+    font-size: 23px;
+  }
+
+  .profileCard {
+    padding: 19px;
+    border-radius: 12px;
+  }
+
+  .sectionHeading {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sectionIcon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .photoContent {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .avatar {
+    width: 78px;
+    height: 78px;
+  }
+
+  .photoButtons {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .formActions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backButton,
+  .uploadButton,
+  .removeButton,
+  .inputWrapper,
+  .cancelButton,
+  .saveButton {
+    transition: none;
+  }
+}

@@ -1,0 +1,547 @@
+
+.profilePage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  color: #1e293b;
+}
+
+.pageHeader {
+  margin-bottom: 24px;
+}
+
+.pageHeader h1 {
+  margin: 0 0 8px;
+  color: #172554;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.pageHeader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.card {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.sectionHeader {
+  margin-bottom: 22px;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 6px;
+  color: #1e293b;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.formGroup label span {
+  color: #dc2626;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  outline: none;
+  background: #ffffff;
+  color: #334155;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.fieldError {
+  color: #dc2626;
+  font-size: 12px;
+}
+
+.helpText {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.successMessage {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.errorMessage {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* School logo section */
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.logoPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 42px;
+}
+
+.logoPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Principal signature preview */
+
+.signaturePreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  max-width: 100%;
+  height: 85px;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+.signaturePreview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Image upload controls */
+
+.logoControls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.uploadButton {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.uploadButton:hover {
+  background: #f1f5f9;
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.logoControls p {
+  max-width: 560px;
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Form buttons */
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.saveButton,
+.resetButton {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveButton {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.saveButton:hover {
+  background: #1d4ed8;
+}
+
+.resetButton {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.resetButton:hover {
+  background: #e2e8f0;
+}
+
+/* Tablet layout */
+
+@media (max-width: 768px) {
+  .profilePage {
+    padding-bottom: 20px;
+  }
+
+  .pageHeader h1 {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .fullWidth {
+    grid-column: auto;
+  }
+
+  .logoSection {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .signaturePreview {
+    width: 220px;
+  }
+}
+
+/* Mobile layout */
+
+@media (max-width: 480px) {
+  .logoSection {
+    flex-direction: column;
+  }
+
+  .formActions {
+    flex-direction: column-reverse;
+  }
+
+  .saveButton,
+  .resetButton {
+    width: 100%;
+  }
+
+  .signaturePreview {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Danger Zone - Reset All Data */
+
+.dangerZone {
+  margin-top: 30px;
+  padding: 24px;
+  border: 1px solid #e5bcbc;
+  border-radius: 12px;
+  background: #fffafa;
+}
+
+.dangerHeader {
+  margin-bottom: 22px;
+}
+
+.dangerHeader h2 {
+  margin: 0 0 8px;
+  color: #b42318;
+  font-size: 20px;
+}
+
+.dangerHeader p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.dangerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.dangerContent h3 {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 16px;
+}
+
+.dangerContent p {
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.dangerContent .dangerWarning {
+  color: #b42318;
+  font-weight: 600;
+}
+
+.dangerButton,
+.confirmResetButton {
+  border: none;
+  border-radius: 7px;
+  background: #c62828;
+  color: white;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dangerButton:hover,
+.confirmResetButton:hover:not(:disabled) {
+  background: #a71919;
+}
+
+.dangerButton:disabled,
+.confirmResetButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.confirmDialog {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid #e5bcbc;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.confirmDialog h3 {
+  margin: 0 0 12px;
+  color: #b42318;
+}
+
+.confirmDialog p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.confirmInput {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.confirmInput:focus {
+  outline: 2px solid #e4aaaa;
+  border-color: #c62828;
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cancelButton {
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background: #fff;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .dangerContent {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .dangerButton {
+    width: 100%;
+  }
+
+  .confirmActions {
+    flex-direction: column;
+  }
+
+  .confirmActions button {
+    width: 100%;
+  }
+}
+
+/* School Code section */
+
+.schoolCodeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 18px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+}
+
+.schoolCodeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.schoolCodeInfo label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.schoolCodeValue {
+  color: #172554;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  overflow-wrap: anywhere;
+}
+
+.copyCodeButton {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copyCodeButton:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.copyCodeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .schoolCodeBox {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .copyCodeButton {
+    width: 100%;
+  }
+}
+
+

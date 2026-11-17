@@ -1,0 +1,396 @@
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  padding: 22px 16px 16px;
+  overflow-y: auto;
+
+  background: #111827;
+  color: #f8fafc;
+  border-right: 1px solid #263244;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 66px;
+  padding: 0 8px 22px;
+  border-bottom: 1px solid #293548;
+}
+
+.brandIcon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  box-shadow: 0 5px 14px rgba(59, 130, 246, 0.25);
+}
+
+.brandText {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.brandText h2 {
+  margin: 0;
+  color: #f9fafb;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+.brandText span {
+  color: #8291a7;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.sectionLabel {
+  margin: 27px 10px 12px;
+  color: #8291a7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navLink {
+  min-height: 46px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 0 12px;
+  border-radius: 10px;
+
+  color: #b7c2d2;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background: #202d40;
+  transform: translateX(2px);
+}
+
+/* =========================================
+   LUCIDE ICONS
+========================================= */
+
+.icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+  background: rgba(148, 163, 184, 0.10);
+  color: #cbd5e1;
+}
+
+.icon svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+}
+
+.navText {
+  flex: 1;
+}
+
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
+
+.active {
+  color: #ffffff;
+  background: linear-gradient(100deg, #2563eb, #3b82f6);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+}
+
+.active .icon {
+  background: rgba(255, 255, 255, 0.17);
+  color: #ffffff;
+}
+
+.active:hover {
+  color: #ffffff;
+  background: linear-gradient(100deg, #2563eb, #3b82f6);
+  transform: none;
+}
+
+/* =========================================
+   SIDEBAR FOOTER
+========================================= */
+
+.sidebarFooter {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #293548;
+}
+
+/* Help section */
+
+.footerNote {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 15px;
+  padding: 12px 10px;
+
+  border: 1px solid #293548;
+  border-radius: 11px;
+
+  background: #192436;
+}
+
+.footerIcon {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+  background: #263c5b;
+  color: #93c5fd;
+}
+
+.footerIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.footerNote div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerNote strong {
+  color: #e5e7eb;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.footerNote span {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout {
+  width: 100%;
+  min-height: 43px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 0 13px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #fca5a5;
+
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.logout:hover {
+  background: rgba(239, 68, 68, 0.10);
+  border-color: rgba(239, 68, 68, 0.15);
+  color: #fecaca;
+}
+
+.logoutIcon {
+  width: 28px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+.logoutIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* =========================================
+   SIDEBAR VERSION
+========================================= */
+
+.sidebarVersion {
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* =========================================
+   MOBILE CLOSE BUTTON
+========================================= */
+
+.mobileCloseButton {
+  display: none;
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 275px;
+    height: 100vh;
+    height: 100dvh;
+
+    z-index: 1000;
+
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+
+    box-shadow: 15px 0 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .mobileCloseButton {
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+
+    display: grid;
+    place-items: center;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #263244;
+    color: #cbd5e1;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  .mobileCloseButton:hover {
+    background: #374151;
+    color: #ffffff;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+  .sidebar {
+    width: min(275px, 85vw);
+  }
+
+  .brandText h2 {
+    font-size: 14px;
+  }
+
+  .navLink {
+    min-height: 44px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .logout,
+  .sidebar {
+    transition: none;
+  }
+}
