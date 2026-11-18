@@ -1,4 +1,3 @@
-
 import {
   useCallback,
   useEffect,
@@ -6,11 +5,10 @@ import {
   useState,
 } from "react";
 
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:5000/api";
-
+// Use Render's VITE_API_URL in production and localhost during local development.
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\/$/, "");
 
 const MONTHS = [
   "April",
@@ -55,7 +53,7 @@ async function requestApi(path) {
     });
   } catch {
     throw new Error(
-      "Cannot connect to the backend. Check that the server is running and the API address is correct."
+      "Cannot connect to the backend. Please check your internet connection and backend service."
     );
   }
 

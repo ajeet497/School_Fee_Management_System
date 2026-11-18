@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\\/$/, "");
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ function ForgotPassword() {
         }
       );
 
-      const result = await response.json();
+      const result = await response.json().catch(() => ({}));
 
       if (!response.ok || !result.success) {
         throw new Error(result.message || "Unable to process your request.");

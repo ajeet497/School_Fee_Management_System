@@ -1,8 +1,10 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE_URL = "http://localhost:5000/api";
+// Use Render's VITE_API_URL in production and localhost during local development.
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\/$/, "");
 
 export function useLogin() {
   const navigate = useNavigate();
@@ -78,7 +80,7 @@ export function useLogin() {
         }),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
       if (!response.ok || !data.success) {
         setMessage(
@@ -108,16 +110,15 @@ export function useLogin() {
 
       sessionStorage.setItem(
         "schoolCode",
-        data.admin.schoolCode
+        data.admin.schoolCode ?? ""
       );
 
       navigate("/dashboard", { replace: true });
-
     } catch (error) {
       console.error("Login request failed:", error);
 
       setMessage(
-        "Cannot connect to the backend. Make sure the server is running."
+        "Cannot connect to the backend. Please check your internet connection and backend service."
       );
     } finally {
       setIsSubmitting(false);

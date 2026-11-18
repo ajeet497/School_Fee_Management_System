@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const API_BASE_URL = "http://localhost:5000/api";
+// Use Render's VITE_API_URL in production and localhost during local development.
+const API_BASE_URL =
+  (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
 const DEFAULT_SESSION = "2026-2027";
 
 const MONTHS = [
@@ -222,7 +224,7 @@ async function requestApi(path, options = {}) {
     });
   } catch {
     throw new Error(
-      "Cannot connect to the backend. Check that your server is running on port 5000."
+      "Cannot connect to the backend. Please check your internet connection and backend service."
     );
   }
 

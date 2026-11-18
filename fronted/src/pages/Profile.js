@@ -1,9 +1,11 @@
-
 import { useEffect, useState } from "react";
 
-const API_BASE_URL =
+// Use the deployed backend URL from the Vite environment variable.
+// The localhost URL is used only when VITE_API_URL is not configured.
+const API_BASE_URL = (
   import.meta.env.VITE_API_URL ||
-  `http://${window.location.hostname}:5000/api`;
+  `http://${window.location.hostname}:5000/api`
+).replace(/\\/$/, "");
 
 const initialProfile = {
   schoolCode: "",

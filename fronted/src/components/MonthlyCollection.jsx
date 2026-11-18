@@ -1,8 +1,11 @@
-
 import { useEffect, useState } from "react";
 import styles from "./MonthlyCollection.module.css";
 
-const API_BASE_URL = "http://localhost:5000/api";
+// Automatically selects the correct backend URL.
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\\/$/, "");
+
 const ACADEMIC_SESSION = "2026-2027";
 
 function formatCurrency(amount) {
@@ -57,7 +60,9 @@ function MonthlyCollection() {
         }
 
         const response = await fetch(
-          `${API_BASE_URL}/payments?academic_session=${ACADEMIC_SESSION}`,
+          `${API_BASE_URL}/payments?academic_session=${encodeURIComponent(
+            ACADEMIC_SESSION
+          )}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -65,7 +70,7 @@ function MonthlyCollection() {
           }
         );
 
-        const result = await response.json();
+        const result = await response.json().catch(() => ({}));
 
         if (!response.ok || result.success === false) {
           throw new Error(
@@ -73,7 +78,10 @@ function MonthlyCollection() {
           );
         }
 
-        const payments = result.data || [];
+        const payments = Array.isArray(result.data)
+          ? result.data
+          : [];
+
         const months = getLastFourMonths();
 
         const monthlyTotals = {};
@@ -85,15 +93,17 @@ function MonthlyCollection() {
         payments.forEach((payment) => {
           if (!payment.paymentDate) return;
 
-          // Backend payment date is YYYY-MM-DD.
           // Avoid timezone conversion when grouping payments.
           const date = String(payment.paymentDate).slice(0, 10);
 
-          if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
+          if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) return;
 
           const monthKey = date.slice(0, 7);
 
-          if (Object.hasOwn(monthlyTotals, monthKey)) {
+          if (Object.prototype.hasOwnProperty.call(
+            monthlyTotals,
+            monthKey
+          )) {
             monthlyTotals[monthKey] += Number(payment.amount || 0);
           }
         });
@@ -113,7 +123,9 @@ function MonthlyCollection() {
           );
         }
       } finally {
-        if (active) setLoading(false);
+        if (active) {
+          setLoading(false);
+        }
       }
     }
 

@@ -1,4 +1,8 @@
-const API_BASE_URL = "http://localhost:5000/api";
+// Use the deployed backend URL from the Vite environment variable.
+// The localhost URL is used only when VITE_API_URL is not configured.
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\\/$/, "");
 
 // Get the logged-in student's token.
 function getStudentAuthHeaders() {

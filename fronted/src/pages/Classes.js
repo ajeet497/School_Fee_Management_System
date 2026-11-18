@@ -1,15 +1,15 @@
-
 import {
   useCallback,
   useEffect,
   useState,
 } from "react";
 
-// Use the same computer that served the frontend to reach the backend.
-// If configured, VITE_API_URL takes priority.
-const API_BASE_URL =
+// Use the configured backend URL.
+// VITE_API_URL is set in the frontend deployment environment.
+const API_BASE_URL = (
   import.meta.env.VITE_API_URL ||
-  `http://${window.location.hostname}:5000/api`;
+  `http://${window.location.hostname}:5000/api`
+).replace(/\/$/, "");
 
 // Send requests to the existing backend.
 async function requestApi(path, options = {}) {
@@ -34,7 +34,7 @@ async function requestApi(path, options = {}) {
     });
   } catch {
     throw new Error(
-      "Cannot connect to the backend. Check that the backend computer is reachable and its server is running on port 5000."
+      "Cannot connect to the backend. Please check your internet connection or try again later."
     );
   }
 

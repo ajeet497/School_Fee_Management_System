@@ -12,9 +12,10 @@ import {
 import styles from "./DashboardCards.module.css";
 import { getStudents } from "../services/studentApi";
 
-const API_BASE_URL =
+const API_BASE_URL = (
   import.meta.env.VITE_API_URL ||
-  `http://${window.location.hostname}:5000/api`;
+  `http://${window.location.hostname}:5000/api`
+).replace(/\\/$/, "");
 
 const initialStats = {
   totalStudents: 0,
@@ -51,7 +52,7 @@ async function fetchProtectedData(path) {
     });
   } catch {
     throw new Error(
-      "Cannot connect to backend. Check your server on port 5000."
+      "Cannot connect to the backend. Please check your internet connection or try again later."
     );
   }
 

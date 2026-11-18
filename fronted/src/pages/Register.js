@@ -1,7 +1,10 @@
-
 import { useState } from "react";
 
-const API_BASE_URL = "http://localhost:5000/api";
+// Use the deployed backend URL from the Vite environment variable.
+// The localhost URL is used only when VITE_API_URL is not configured.
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\/$/, "");
 
 export function useRegister() {
   const [formData, setFormData] = useState({
@@ -86,7 +89,7 @@ export function useRegister() {
         }),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
       if (!response.ok || !data.success) {
         setMessage(
@@ -111,7 +114,7 @@ export function useRegister() {
       console.error("Registration error:", error);
 
       setMessage(
-        "Cannot connect to the backend. Make sure the server is running."
+        "Cannot connect to the backend. Please check your internet connection or try again later."
       );
     } finally {
       setIsSubmitting(false);

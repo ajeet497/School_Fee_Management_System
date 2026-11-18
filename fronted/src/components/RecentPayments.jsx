@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import {
   CreditCard,
@@ -9,9 +8,10 @@ import {
 
 import styles from "./RecentPayments.module.css";
 
-const API_BASE_URL =
+const API_BASE_URL = (
   import.meta.env.VITE_API_URL ||
-  `http://${window.location.hostname}:5000/api`;
+  `http://${window.location.hostname}:5000/api`
+).replace(/\\/$/, "");
 
 const ACADEMIC_SESSION = "2026-2027";
 
@@ -72,7 +72,7 @@ function RecentPayments() {
           }
         );
 
-        const result = await response.json();
+        const result = await response.json().catch(() => ({}));
 
         if (!response.ok || result.success === false) {
           throw new Error(
@@ -82,7 +82,11 @@ function RecentPayments() {
         }
 
         if (active) {
-          const latestPayments = (result.data || [])
+          const paymentRecords = Array.isArray(result.data)
+            ? result.data
+            : [];
+
+          const latestPayments = paymentRecords
             .sort((a, b) => {
               const dateCompare = String(
                 b.paymentDate || ""
