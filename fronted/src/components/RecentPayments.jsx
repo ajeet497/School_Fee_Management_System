@@ -11,7 +11,7 @@ import styles from "./RecentPayments.module.css";
 const API_BASE_URL = (
   import.meta.env.VITE_API_URL ||
   `http://${window.location.hostname}:5000/api`
-).replace(/\\/$/, "");
+).replace(/\/$/, "");
 
 const ACADEMIC_SESSION = "2026-2027";
 

@@ -4,7 +4,7 @@ import styles from "./MonthlyCollection.module.css";
 // Automatically selects the correct backend URL.
 const API_BASE_URL = (
   import.meta.env.VITE_API_URL || "http://localhost:5000/api"
-).replace(/\\/$/, "");
+).replace(/\/$/, "");
 
 const ACADEMIC_SESSION = "2026-2027";
 

@@ -2,7 +2,7 @@
 // The localhost URL is used only when VITE_API_URL is not configured.
 const API_BASE_URL = (
   import.meta.env.VITE_API_URL || "http://localhost:5000/api"
-).replace(/\\/$/, "");
+).replace(/\/$/, "");
 
 // Get the admin token saved during login.
 function getAuthHeaders() {

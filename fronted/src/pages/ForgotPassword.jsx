@@ -4,7 +4,7 @@ import styles from "./Login.module.css";
 
 const API_BASE_URL = (
   import.meta.env.VITE_API_URL || "http://localhost:5000/api"
-).replace(/\\/$/, "");
+).replace(/\/$/, "");
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
