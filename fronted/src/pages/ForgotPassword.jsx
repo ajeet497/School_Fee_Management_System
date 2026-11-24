@@ -42,7 +42,9 @@ function ForgotPassword() {
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok || !result.success) {
-        throw new Error(result.message || "Unable to process your request.");
+        throw new Error(
+          result.message || "Unable to process your request."
+        );
       }
 
       setMessage(

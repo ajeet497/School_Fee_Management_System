@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import {
   CreditCard,
@@ -242,7 +243,6 @@ function RecentPayments() {
                   <td>
                     <span className={styles.paymentMode}>
                       <CreditCard size={14} />
-
                       {payment.paymentMode || "-"}
                     </span>
                   </td>
@@ -251,7 +251,6 @@ function RecentPayments() {
                   <td>
                     <span className={styles.paymentDate}>
                       <CalendarDays size={14} />
-
                       {formatDate(payment.paymentDate)}
                     </span>
                   </td>
