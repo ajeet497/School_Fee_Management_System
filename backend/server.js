@@ -2908,13 +2908,23 @@ app.get(
          FROM students AS s
          LEFT JOIN classes AS c
            ON c.id = s.class_id AND c.school_id = s.school_id
-         LEFT JOIN fee_structure AS fs
-           ON fs.class_id = s.class_id AND fs.school_id = s.school_id
-          AND fs.academic_session = (
-            SELECT MAX(fs2.academic_session)
-            FROM fee_structure AS fs2
-            WHERE fs2.class_id = s.class_id AND fs2.school_id = s.school_id
-          )
+         LEFT JOIN (
+           SELECT fs1.*
+           FROM fee_structure AS fs1
+           INNER JOIN (
+             SELECT
+               school_id,
+               class_id,
+               MAX(academic_session) AS academic_session
+             FROM fee_structure
+             GROUP BY school_id, class_id
+           ) AS latest_fs
+             ON latest_fs.school_id = fs1.school_id
+            AND latest_fs.class_id = fs1.class_id
+            AND latest_fs.academic_session = fs1.academic_session
+         ) AS fs
+           ON fs.class_id = s.class_id
+          AND fs.school_id = s.school_id
          WHERE s.id = ? AND s.school_id = ?
          LIMIT 1`,
         [studentId, req.student.schoolId]
